@@ -13,76 +13,60 @@ public class CollectionTestSuite {
 
     @Before
     public void before() {
-        System.out.printf("*** Rozpoczęcie testu ***\n");
+        System.out.printf( "* Test klasy *\n" );
     }
 
     @After
     public void after() {
-        System.out.printf("*** Zakończenie testu ***\n");
+        System.out.printf( "* Koniec testu klasy *\n" );
     }
 
     @BeforeClass
     public static void beforeClass() {
-        System.out.printf("** Test klasy **\n");
+        System.out.printf("** Rozpoczęcie testu **\n");
     }
 
     @AfterClass
     public static void afterClass() {
-        System.out.printf("** Koniec testu klasy **\n");
+        System.out.printf("** Zakończenie testu **\n");
     }
 
     @Test
     public void testOddNumbersExterminatorEmptyList() {
+
         //Given
-
         OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
-
         ArrayList<Integer> theTestList = new ArrayList<Integer>();
         Random theGenerator = new Random();
 
         //When
-        for (int i = 0; i < 10; i++) {
+        for ( int i = 0; i < 10; i++ ) {
             theTestList.add(theGenerator.nextInt(100));
         }
         //Then
-        oddNumbersExterminator.exterminate(theTestList);
+        ArrayList<Integer> lista = oddNumbersExterminator.exterminate(theTestList);
+        //lista.add(3);
 
-        oddNumbersExterminator.getPrint(theTestList);
-
-        if (theTestList.isEmpty() != false) {
-            System.out.println("Pusta baza");
+        if ( lista.isEmpty() != false ) {
+            System.out.println( "Pusta baza danych" );
         } else {
-            System.out.println("Baza z danymi");
+            System.out.println( "Baza danych nie jest pusta." );
         }
 
+        boolean x = true;
         int temporaryValue = 0;
-        for (Integer i = 0; i < theTestList.size(); i++) {
-         //   temporaryValue = oddNumbersExterminator.getEven(i);
-            if (temporaryValue % 2 != 0) {
-                System.out.println("Test negatywny " + temporaryValue);
+        for ( Integer i = 0; i < lista.size(); i++ ) {
+            temporaryValue = lista.get(i);
+
+            if ( temporaryValue % 2 != 0 ) {
+                x = false;
                 break;
-            } else {
-                System.out.println("Wynik testu pozytywny " + temporaryValue);
             }
+        }
+        if ( x == true ) {
+            System.out.println("Test klasy OddNumbersExterminator przeszedł pomyślnie.");
+        } else {
+            System.out.println("Test klasy OddNumbersExterminator wykazał błędy!");
         }
     }
 }
-
- // testOddNumbersExterminatorEmptyList
-    // (sprawdzi czy klasa zachowuje się poprawnie gdy lista jest pusta)
-
-//  testOddNumbersExterminatorNormalList
-    // (sprawdzi czy klasa zachowuje się poprawnie gdy lista zawiera
-        //liczby parzyste i nieparzyste)
-
-
-
-
-/*
-napisz testy sprawdzające czy metoda filtrująca liczby nieparzyste działa poprawnie:
-
- Użyj również adnotacji @Before oraz @After, aby wyświetlić informację o tym,
-  jakie operacje (testy) są aktualnie wykonywane.
-
-
- */
