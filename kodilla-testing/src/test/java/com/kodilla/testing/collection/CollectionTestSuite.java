@@ -53,20 +53,16 @@ public class CollectionTestSuite {
             System.out.println( "Baza danych nie jest pusta." );
         }
 
-        boolean x = true;
+        boolean x = false;
         int temporaryValue = 0;
         for ( Integer i = 0; i < lista.size(); i++ ) {
             temporaryValue = lista.get(i);
 
             if ( temporaryValue % 2 != 0 ) {
-                x = false;
+                x = true;
                 break;
             }
         }
-        if ( x == true ) {
-            System.out.println("Test klasy OddNumbersExterminator przeszedł pomyślnie.");
-        } else {
-            System.out.println("Test klasy OddNumbersExterminator wykazał błędy!");
-        }
+        Assert.assertFalse("Odd elements found!", x);
     }
 }
