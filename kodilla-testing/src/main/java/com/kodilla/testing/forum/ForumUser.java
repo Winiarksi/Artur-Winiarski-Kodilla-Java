@@ -10,9 +10,7 @@ public class ForumUser {
     private LinkedList<ForumComment> comments = new LinkedList<ForumComment>();
 
     public ForumUser( String name, String realName ) {
-
         this.name = name;
-
         this.realName = realName;
     }
 
