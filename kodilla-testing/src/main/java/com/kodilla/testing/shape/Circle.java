@@ -34,10 +34,12 @@ public class Circle implements Shape {
         return result;
     }
 
+    @Override
     public String getShapeName(){
         return name;
     }
 
+    @Override
     public Double getField(){
         pole =  3.14159 * r * r;
         return pole;

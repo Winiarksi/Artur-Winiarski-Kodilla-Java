@@ -44,10 +44,12 @@ public class Rectangle implements Shape {
         return result;
     }
 
+    @Override
     public String getShapeName(){
         return name;
     }
 
+    @Override
     public Double getField(){
         double p;
         p = ( leg1 + leg2 + hypotenuse )/2;

@@ -39,11 +39,13 @@ public class Square implements Shape {
         return result;
     }
 
+    @Override
     public String getShapeName(){
 
         return name;
     }
 
+    @Override
     public Double getField(){
         pole = length * width;
         return pole;
