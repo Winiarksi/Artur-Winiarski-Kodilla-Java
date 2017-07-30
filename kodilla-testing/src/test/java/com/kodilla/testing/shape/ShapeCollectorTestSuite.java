@@ -31,7 +31,8 @@ public class ShapeCollectorTestSuite {
         theShape.addFigure( new Circle( "Koło pierwsze", 5.5 ));
 
         // Then
-        Assert.assertEquals( 0, theShape.getFigure(1));
+      //  Assert.assertEquals( 0, theShape.getFigure(0));
+        Assert.assertTrue(theShape.getFigure(0) instanceof Circle);
     }
 
     @Test // USUWANIE
