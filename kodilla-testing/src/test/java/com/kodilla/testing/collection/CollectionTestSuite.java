@@ -36,7 +36,7 @@ public class CollectionTestSuite {
 
         //Given
         OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
-        ArrayList<Integer> theTestList = new ArrayList<Integer>();
+        ArrayList<Integer> theTestList = new ArrayList<Integer>(); // zapis
         Random theGenerator = new Random();
 
         //When
@@ -44,7 +44,7 @@ public class CollectionTestSuite {
             theTestList.add(theGenerator.nextInt(100));
         }
         //Then
-        ArrayList<Integer> lista = oddNumbersExterminator.exterminate(theTestList);
+        ArrayList<Integer> lista = oddNumbersExterminator.exterminate(theTestList); // ??
         //lista.add(3);
 
         if ( lista.isEmpty() != false ) {
