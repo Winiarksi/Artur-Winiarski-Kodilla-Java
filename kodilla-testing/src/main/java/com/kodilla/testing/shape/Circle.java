@@ -2,7 +2,7 @@ package com.kodilla.testing.shape;
 
 public class Circle implements Shape {
     public String name;
-    public double pole;
+    public double surfaceArea;
     public double r;
 
     public Circle ( String name, double r ){
@@ -17,7 +17,7 @@ public class Circle implements Shape {
 
         Circle circle = (Circle) o;
 
-        if (Double.compare(circle.pole, pole) != 0) return false;
+        if (Double.compare(circle.surfaceArea, surfaceArea) != 0) return false;
         if (Double.compare(circle.r, r) != 0) return false;
         return name.equals(circle.name);
     }
@@ -27,7 +27,7 @@ public class Circle implements Shape {
         int result;
         long temp;
         result = name.hashCode();
-        temp = Double.doubleToLongBits(pole);
+        temp = Double.doubleToLongBits(surfaceArea);
         result = 31 * result + (int) (temp ^ (temp >>> 32));
         temp = Double.doubleToLongBits(r);
         result = 31 * result + (int) (temp ^ (temp >>> 32));
@@ -41,8 +41,8 @@ public class Circle implements Shape {
 
     @Override
     public Double getField(){
-        pole =  3.14159 * r * r;
-        return pole;
+        surfaceArea =  Math.PI * r * r;
+        return surfaceArea;
     }
 
 }

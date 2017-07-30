@@ -2,11 +2,11 @@ package com.kodilla.testing.shape;
 
 public class Square implements Shape {
     public String name;
-    public double pole;
+    public double surfaceArea;
     public double length;
     public double width;
 
-    public Square( String name, double length, double width  ) {
+    public Square(String name, double length, double width  ) {
         this.name = name;
         this.length = length;
         this.width = width;
@@ -19,7 +19,7 @@ public class Square implements Shape {
 
         Square square = (Square) o;
 
-        if (Double.compare(square.pole, pole) != 0) return false;
+        if (Double.compare(square.surfaceArea, surfaceArea) != 0) return false;
         if (Double.compare(square.length, length) != 0) return false;
         if (Double.compare(square.width, width) != 0) return false;
         return name.equals(square.name);
@@ -30,7 +30,7 @@ public class Square implements Shape {
         int result;
         long temp;
         result = name.hashCode();
-        temp = Double.doubleToLongBits(pole);
+        temp = Double.doubleToLongBits(surfaceArea);
         result = 31 * result + (int) (temp ^ (temp >>> 32));
         temp = Double.doubleToLongBits(length);
         result = 31 * result + (int) (temp ^ (temp >>> 32));
@@ -47,7 +47,7 @@ public class Square implements Shape {
 
     @Override
     public Double getField(){
-        pole = length * width;
-        return pole;
+        surfaceArea = length * width;
+        return surfaceArea;
     }
 }
