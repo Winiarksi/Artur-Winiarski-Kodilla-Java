@@ -14,7 +14,7 @@ public class ShapeCollectorTestSuite {
     }
     @AfterClass
     public static void afterAllTest() {
-        System.out.println("Wszystkie testy zakończone.")
+        System.out.println("Wszystkie testy zakończone.");
     }
 
     @Before
@@ -31,7 +31,7 @@ public class ShapeCollectorTestSuite {
         theShape.addFigure( new Circle( "Koło pierwsze", 5.5 ));
 
         // Then
-        Assert.assertEquals( 1, theShape.getFigure(0));
+        Assert.assertEquals( 0, theShape.getFigure(1));
     }
 
     @Test // USUWANIE
