@@ -3,13 +3,13 @@ package com.kodilla.testing.forum.statistics;
 import java.util.List;
 import java.util.ArrayList;
 
-public class StatisticsForum implements Statistics{
+public class StatisticsForum{
     int numberOfUsers;              // Ilość użytkowników
     int postsCount;                 // Ilość postów
     int numberOfComments;           // Ilosć komentarzy
-    double AveragePostsUser;        // Średnia ilość postów na użytkownika
-    double AverageCommentsUser;     // Średnia ilość komentarzy na użytkownika
-    double AverageCommentsPost;     // Średnia ilość komentarzy na post
+    double averagePostsUser;        // Średnia ilość postów na użytkownika
+    double averageCommentsUser;     // Średnia ilość komentarzy na użytkownika
+    double averageCommentsPost;     // Średnia ilość komentarzy na post
     Statistics statistics;          // DLACZEGO TAKI ZAPIS ?
 
     public StatisticsForum(Statistics statistics){
@@ -17,9 +17,14 @@ public class StatisticsForum implements Statistics{
         this.statistics = statistics;
     }
 
-    public void calculateAdvStatistics(Statistics statistics){
+    public void calculateAdvStatistics(Statistics statistics){ // do wyjaśnienia ta klasa
     // obliczy podane powyżej wartości i zapamięta je we właściwościach (polach) klasy
-
+        numberOfUsers = statistics.usersNames().size();
+        postsCount = statistics.postsCount();
+        numberOfComments = statistics.commentsCount();
+        averagePostsUser = statistics.postsCount()/statistics.usersNames().size();
+        averageCommentsUser = statistics.commentsCount()/statistics.usersNames().size();
+        averageCommentsPost = statistics.commentsCount()/statistics.postsCount();
     }
 
     public void ShowStatistics(){
