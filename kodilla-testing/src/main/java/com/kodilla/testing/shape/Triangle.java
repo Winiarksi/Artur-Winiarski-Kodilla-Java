@@ -57,4 +57,14 @@ public class Triangle implements Shape {
         return surfaceArea;
     }
 
+    @Override
+    public String toString() {
+        return "Triangle{" +
+                "name='" + name + '\'' +
+                ", surfaceArea=" + surfaceArea +
+                ", hypotenuse=" + hypotenuse +
+                ", leg1=" + leg1 +
+                ", leg2=" + leg2 +
+                '}';
+    }
 }

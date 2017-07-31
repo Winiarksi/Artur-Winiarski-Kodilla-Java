@@ -3,16 +3,13 @@ package com.kodilla.testing.shape;
 import java.util.ArrayList;
 
 public class ShapeCollector {
-    //public Shape shape;
     ArrayList<Shape> shapeList = new ArrayList<Shape>();
 
-    public ShapeCollector( /*Shape shape */) {
-        //this.shape = shape;
-    }
+    public ShapeCollector() {}
 
     public void addFigure(Shape shape) {
         shapeList.add(shape);
-    }
+     }
 
     public boolean removeFigure(Shape shape){
         boolean result = false;
@@ -31,9 +28,17 @@ public class ShapeCollector {
      return theShape;
     }
 
-    public void showFigures(){
-        for (Shape shape : shapeList ) {
-            System.out.print(shape);
+    public boolean showFigures(){
+        int check = 0;
+        for ( int i =0; i < shapeList.size(); i++ ) {
+            System.out.println( shapeList.get( i ) );
+            check++;
+        }
+
+        if ( shapeList.size() == check ){
+            return true;
+        } else {
+            return false;
         }
     }
 }

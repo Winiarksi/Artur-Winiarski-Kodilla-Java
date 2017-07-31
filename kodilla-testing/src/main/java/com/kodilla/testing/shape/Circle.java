@@ -45,4 +45,12 @@ public class Circle implements Shape {
         return surfaceArea;
     }
 
+    @Override
+    public String toString() {
+        return "Circle{" +
+                "name='" + name + '\'' +
+                ", surfaceArea=" + surfaceArea +
+                ", r=" + r +
+                '}';
+    }
 }

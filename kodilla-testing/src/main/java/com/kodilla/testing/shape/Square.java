@@ -3,13 +3,11 @@ package com.kodilla.testing.shape;
 public class Square implements Shape {
     public String name;
     public double surfaceArea;
-    public double length;
-    public double width;
+    public double a;
 
-    public Square(String name, double length, double width  ) {
+    public Square(String name, double a ) {
         this.name = name;
-        this.length = length;
-        this.width = width;
+        this.a = a;
     }
 
     @Override
@@ -20,8 +18,7 @@ public class Square implements Shape {
         Square square = (Square) o;
 
         if (Double.compare(square.surfaceArea, surfaceArea) != 0) return false;
-        if (Double.compare(square.length, length) != 0) return false;
-        if (Double.compare(square.width, width) != 0) return false;
+        if (Double.compare(square.a, a) != 0) return false;
         return name.equals(square.name);
     }
 
@@ -32,9 +29,7 @@ public class Square implements Shape {
         result = name.hashCode();
         temp = Double.doubleToLongBits(surfaceArea);
         result = 31 * result + (int) (temp ^ (temp >>> 32));
-        temp = Double.doubleToLongBits(length);
-        result = 31 * result + (int) (temp ^ (temp >>> 32));
-        temp = Double.doubleToLongBits(width);
+        temp = Double.doubleToLongBits(a);
         result = 31 * result + (int) (temp ^ (temp >>> 32));
         return result;
     }
@@ -47,7 +42,16 @@ public class Square implements Shape {
 
     @Override
     public Double getField(){
-        surfaceArea = length * width;
+        surfaceArea = a * a;
         return surfaceArea;
+    }
+
+    @Override
+    public String toString() {
+        return "Square{" +
+                "name='" + name + '\'' +
+                ", surfaceArea=" + surfaceArea +
+                ", a=" + a +
+                '}';
     }
 }
