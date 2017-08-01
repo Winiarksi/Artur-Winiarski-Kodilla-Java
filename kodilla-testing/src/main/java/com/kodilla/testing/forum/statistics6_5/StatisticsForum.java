@@ -1,7 +1,4 @@
-package com.kodilla.testing.forum.statistics;
-
-import java.util.List;
-import java.util.ArrayList;
+package com.kodilla.testing.forum.statistics6_5;
 
 public class StatisticsForum{
     int numberOfUsers;              // Ilość użytkowników
@@ -22,9 +19,9 @@ public class StatisticsForum{
         numberOfUsers = statistics.usersNames().size();
         postsCount = statistics.postsCount();
         numberOfComments = statistics.commentsCount();
-        averagePostsUser = postsCount/numberOfUsers ;           //statistics.postsCount()/statistics.usersNames().size();
-        averageCommentsUser = numberOfComments/numberOfUsers;   //statistics.commentsCount()/statistics.usersNames().size();
-        averageCommentsPost = numberOfComments/postsCount;      // statistics.commentsCount()/statistics.postsCount();
+        averagePostsUser = postsCount/numberOfUsers ;           //statistics6_5.postsCount()/statistics6_5.usersNames().size();
+        averageCommentsUser = numberOfComments/numberOfUsers;   //statistics6_5.commentsCount()/statistics6_5.usersNames().size();
+        averageCommentsPost = numberOfComments/postsCount;      // statistics6_5.commentsCount()/statistics6_5.postsCount();
     }
 
     public void showStatistics(){

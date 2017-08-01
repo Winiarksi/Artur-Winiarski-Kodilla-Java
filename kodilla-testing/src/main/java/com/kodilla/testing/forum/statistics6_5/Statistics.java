@@ -1,4 +1,4 @@
-package com.kodilla.testing.forum.statistics;
+package com.kodilla.testing.forum.statistics6_5;
 
 import java.util.List;
 
