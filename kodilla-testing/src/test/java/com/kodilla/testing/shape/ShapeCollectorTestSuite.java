@@ -8,7 +8,7 @@ public class ShapeCollectorTestSuite {
 
     private static int testCounter = 0;
 
-    @BeforeClass
+    @BeforeClass // DLACZEGO MA  ZNACZENIE KOLEJNOSC TESTÓW ?
     public static void beforeAllTests() {
         System.out.println("Rozpoczynamy główne testowanie.");
     }
