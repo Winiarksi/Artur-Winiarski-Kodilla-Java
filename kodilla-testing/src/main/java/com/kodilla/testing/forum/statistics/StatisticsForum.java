@@ -18,18 +18,23 @@ public class StatisticsForum{
     }
 
     public void calculateAdvStatistics(Statistics statistics){ // do wyjaśnienia ta klasa
-    // obliczy podane powyżej wartości i zapamięta je we właściwościach (polach) klasy
+
         numberOfUsers = statistics.usersNames().size();
         postsCount = statistics.postsCount();
         numberOfComments = statistics.commentsCount();
-        averagePostsUser = statistics.postsCount()/statistics.usersNames().size();
-        averageCommentsUser = statistics.commentsCount()/statistics.usersNames().size();
-        averageCommentsPost = statistics.commentsCount()/statistics.postsCount();
+        averagePostsUser = postsCount/numberOfUsers ;           //statistics.postsCount()/statistics.usersNames().size();
+        averageCommentsUser = numberOfComments/numberOfUsers;   //statistics.commentsCount()/statistics.usersNames().size();
+        averageCommentsPost = numberOfComments/postsCount;      // statistics.commentsCount()/statistics.postsCount();
     }
 
-    public void ShowStatistics(){
-    // która wyświetli zapamiętane we właściwościach statystyki.
+    public void showStatistics(){
 
+        System.out.println("numberOfUsers: " + numberOfUsers);
+        System.out.println("postsCount: " + postsCount);
+        System.out.println("numberOfComments: " + numberOfComments);
+        System.out.println( "averagePostsUser: " + averagePostsUser );
+        System.out.println( "averageCommentsUser: " + averageCommentsUser );
+        System.out.println( "averageCommentsPost: " + averageCommentsPost );
     }
 }
 

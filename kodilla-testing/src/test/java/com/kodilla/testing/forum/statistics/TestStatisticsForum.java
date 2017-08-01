@@ -1,5 +1,6 @@
 package com.kodilla.testing.forum.statistics;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.lang.annotation.Target;
@@ -17,19 +18,24 @@ public class TestStatisticsForum {
     // Given
         Statistics statisticsMock = mock( Statistics.class ); // tworzony jest mock interfejsu
         List<String> userName = new ArrayList<String>(); //  przygotowujemy obiekt, zwraca metoda .usersNames()
-        userName.add( "Agata2" );
-        userName.add( "Sylwek007" );
-        userName.add( "Scypion Starszy" );
-        userName.add( "Afrodyta" );
+        for ( int i = 0; i < 101; i++ ) {
+            userName.add( "Użytkownik_" + (i+1) );
+        }
+
         when( statisticsMock.usersNames()).thenReturn(userName);    // wywołujemy metode userNames() z zawartoscią Listy
 
+        when(statisticsMock.postsCount()).thenReturn(10);
+        when(statisticsMock.commentsCount()).thenReturn(1000);
+
         StatisticsForum statisticsForum = new StatisticsForum(statisticsMock);
-        // przekazanie przez konstruktora sztucznej implementacji interfejsu Statistics,  czyli statisticsMock
+
 
     // When
+        statisticsForum.calculateAdvStatistics(statisticsMock);
+        statisticsForum.showStatistics();
 
     // Then
-
+        //Assert.assert... ( );
     }
 }
 /*
