@@ -9,11 +9,12 @@ public interface LibraryDatabase {
     // książki listowe zapożyczone przez użytkowników biblioteki
     List<Book>listBooksInHandsOf(LibraryUser libraryUser); // oczekuje obiektu
 
-    // staram się wynająć książkę dla LibraryUser zwraca prawdę, gdy sukces
-    // i zwraca fałsz, gdy książka jest niedostępna do wynajęcia
+    // try to rent a book for libraryUser
+    // returns true when success
+    // and returns false when book is unavailable to rent
     boolean rentABook(LibraryUser libraryUser, Book book);
 
-    // zwróć wszystkie książki zapożyczone przez bibliotekęUser do biblioteki
-    // zwraca liczbę powróconych książek
+    // return all books borrowed by libraryUser to the library
+    // returns number of books returned back
     int returnBooks(LibraryUser libraryUser);
 }

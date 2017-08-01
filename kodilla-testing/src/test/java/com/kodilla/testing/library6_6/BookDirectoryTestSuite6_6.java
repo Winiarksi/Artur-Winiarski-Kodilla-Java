@@ -18,17 +18,22 @@ public class BookDirectoryTestSuite6_6 {
         LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class); // I
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
 
-        LibraryUser libraryUser = new LibraryUser("Bratosz", "Głowacki ", "90090515836");
-
+        LibraryUser libraryUser = new LibraryUser("Bratosz", "Głowacki", "90090515836");
         List<Book> listOfBooks = new ArrayList<Book>();
         listOfBooks.add( new Book("Avengers. Świat Avengers. Tom 1.", "Jonathan Hickman",2015));
+        when(libraryDatabaseMock.listBooksInHandsOf(libraryUser)).thenReturn(listOfBooks);
 
-        when(libraryDatabaseMock.listBooksInHandsOf(libraryUser).thenReturn(listOfBooks));
+        LibraryUser libraryUser2 = new LibraryUser("Tadeusz", "Chłopski", "95090515836");
+        List<Book> listOfBooks2 = new ArrayList<Book>();
+      //  when(libraryDatabaseMock.listBooksInHandsOf(libraryUser2)).thenReturn(listOfBooks2);
+
 
         // When
-        List<Book> theListOfBooks = bookLibrary.listBooksInHandsOf(libraryUser);
+        List<Book> theListOfBooks1 = bookLibrary.listBooksInHandsOf(libraryUser2);
+        List<Book> theListOfBooks2 = bookLibrary.listBooksInHandsOf(libraryUser);
         // Then
-        assertEquals(4, theListOfBooks.size());
+        assertEquals(0, theListOfBooks1.size());
+        assertEquals(1, theListOfBooks2.size());
     }
 
     @Test //
