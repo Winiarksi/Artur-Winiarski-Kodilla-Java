@@ -13,21 +13,22 @@ import static org.mockito.Mockito.*;
 public class BookDirectoryTestSuite6_6 {
 
     @Test // 1 użytkownik, 1 książka
-    public void testlistBooksInHandsOfWithOneBook(LibraryUser libraryUser){
+    public void testlistBooksInHandsOfWithOneBook(){
         // Given
         LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class); // I
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
 
-        List<LibraryUser> libraryUser = new ArrayList<LibraryUser>();
-        libraryUser.add( new LibraryUser("Bratosz", "Głowacki ", "90090515836"));
-        //when(libraryDatabaseMock.listBooksInHandsOf().thenReturn(listOfUser));
+        LibraryUser libraryUser = new LibraryUser("Bratosz", "Głowacki ", "90090515836");
 
         List<Book> listOfBooks = new ArrayList<Book>();
         listOfBooks.add( new Book("Avengers. Świat Avengers. Tom 1.", "Jonathan Hickman",2015));
 
         when(libraryDatabaseMock.listBooksInHandsOf(libraryUser).thenReturn(listOfBooks));
 
-
+        // When
+        List<Book> theListOfBooks = bookLibrary.listBooksInHandsOf(libraryUser);
+        // Then
+        assertEquals(4, theListOfBooks.size());
     }
 
     @Test //
