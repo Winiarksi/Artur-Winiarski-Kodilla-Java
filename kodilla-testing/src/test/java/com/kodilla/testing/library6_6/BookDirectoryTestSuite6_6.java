@@ -19,10 +19,13 @@ public class BookDirectoryTestSuite6_6 {
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
 
         LibraryUser libraryUser = new LibraryUser("Bratosz", "Głowacki", "90090515836");
+
         List<Book> listOfBooks = new ArrayList<Book>();
         listOfBooks.add( new Book("Avengers. Świat Avengers. Tom 1.", "Jonathan Hickman",2015));
+
         when(libraryDatabaseMock.listBooksInHandsOf(libraryUser)).thenReturn(listOfBooks);
 
+///////////////////////////////////////////////////////////////////////////////////////
         LibraryUser libraryUser2 = new LibraryUser("Tadeusz", "Chłopski", "95090515836");
         List<Book> listOfBooks2 = new ArrayList<Book>();
       //  when(libraryDatabaseMock.listBooksInHandsOf(libraryUser2)).thenReturn(listOfBooks2);

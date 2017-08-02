@@ -22,6 +22,12 @@ public class BookLibrary {
 
     public List<Book>listBooksInHandsOf(LibraryUser libraryUser){
         List<Book> resultList = libraryDatabase.listBooksInHandsOf(libraryUser);
+
+        for ( int i = 0; i < resultList.size(); i++){
+            System.out.println(resultList.get(i));
+            System.out.println(libraryUser);
+        }
+
         return resultList;
     }
 }
