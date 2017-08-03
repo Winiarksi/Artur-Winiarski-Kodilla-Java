@@ -7,12 +7,11 @@ import com.kodilla.stream.reference.FunctionalCalculator;
 public class StreamMain {
     public static void main(String[] args) {
         PoemBeautifier poemBeautifier = new PoemBeautifier();
-        poemBeautifier.beautify("*** ", (text) -> text.substring(1).replace("*", "###@@@###@@@###@@@###"));
-        poemBeautifier.beautify("Kwiatki, bratki i stokrotki", (text) -> text.toUpperCase());
-        poemBeautifier.beautify("  Ale  że o chodzi z tym dekorowaniem?", (text) -> text.trim().toLowerCase().replace("?", "?!?"));
-        poemBeautifier.beautify(" ***", (text) -> text.trim());
-
-/*
+        System.out.println(poemBeautifier.beautify("*** ", (text) -> text.substring(1).replace("*", "###@@@###@@@###@@@###")));
+        System.out.println(poemBeautifier.beautify("Kwiatki, bratki i stokrotki", (text) -> text.toUpperCase()));
+        System.out.println(poemBeautifier.beautify("  Ale  że o chodzi z tym dekorowaniem?", (text) -> text.trim().toLowerCase().replace("?", "?!?")));
+        System.out.println(poemBeautifier.beautify(" *** XXX  ***", (text) -> text.trim()));
+        System.out.println("");
         ExpressionExecutor expressionExecutor = new ExpressionExecutor();
 
         System.out.println("Calculating expressions with lambdas");
@@ -26,6 +25,6 @@ public class StreamMain {
         expressionExecutor.executeExpression(3, 4, FunctionalCalculator::addAToB);
         expressionExecutor.executeExpression(3, 4, FunctionalCalculator::subBFromA);
         expressionExecutor.executeExpression(3, 4, FunctionalCalculator::divideAByB);
-*/
+
     }
 }
