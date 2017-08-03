@@ -1,4 +1,4 @@
-package com.kodilla.stream.lambda;
+package com.kodilla.stream.lambda_7_1;
 
 public class ExpressionExecutor {
     public void executeExpression(double a, double b, MathExpression mathExpression) {

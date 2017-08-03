@@ -1,4 +1,4 @@
-package com.kodilla.stream.lambda;
+package com.kodilla.stream.lambda_7_1;
 
 public class SaySomething {
     public void say() {
