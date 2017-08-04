@@ -47,6 +47,6 @@ public class ForumUser {
                 ", nameUser '" + nameUser + '\'' +
                 ", sex " + sex +
                 ", birthDate " + birthDate +
-                ", publishedPosts " + publishedPosts;
+                ", publishedPosts " + publishedPosts + "\n";
     }
 }

@@ -12,7 +12,7 @@ public final class Forum {
     public Forum() {
         theForumUser.add( new ForumUser( 1, "Roman Barbarzyńca", 'M',
                 2009, 1, 01,
-                121));
+                10));
         theForumUser.add( new ForumUser( 2, "Stefan", 'M',
                 1997, 2, 01,
                 121));

@@ -3,17 +3,18 @@ package com.kodilla.stream;
 import com.kodilla.stream.forumuser_7_3z.Forum;
 import com.kodilla.stream.forumuser_7_3z.ForumUser;
 
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class StreamMain {
     public static void main(String[] args) {
     Forum theForum = new Forum();
-    String theResultStringOfUser = theForum.getUserList().stream()
+
+    Map<Integer, ForumUser> theResultStringOfUser = theForum.getUserList().stream()
             .filter(forumUser -> forumUser.getSex()=='M')
+            .filter(forumUser -> forumUser.getPublishedPosts() > 0 )
             .filter(forumUser -> forumUser.getBirthDate().getYear() > 1997)
-                    .map(ForumUser::toString)
-            .collect(Collectors.joining(",\n","* * * * *\n","\n* * * * *"));
-            // jak tu zrobić Nr rosnąco po jedynce ?
+            .collect(Collectors.toMap( ForumUser::getIdUser, forumUser -> forumUser ));
             System.out.println(theResultStringOfUser);
     }
 }
