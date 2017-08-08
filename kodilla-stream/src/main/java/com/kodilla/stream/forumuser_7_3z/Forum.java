@@ -36,4 +36,4 @@ public final class Forum {
         return new ArrayList<>(theForumUser);}
 }
     //
-//  która będzie zwracała kolekcję z użytkownika forum
+//  która będzie zwracała kolekcję z użytkownika forum_7_4
