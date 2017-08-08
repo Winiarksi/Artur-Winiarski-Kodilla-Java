@@ -11,7 +11,6 @@ public interface ArrayOperations {
         double avergardeTable = IntStream.range(0, numbers.length)
                 .map(n->numbers[n])
                 .average().getAsDouble();
-
         System.out.println("avergardeList: " + avergardeTable);
 
         return avergardeTable;
