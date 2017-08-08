@@ -53,7 +53,7 @@ public class StreamMain {
     }
 
 
-import com.kodilla.stream.book_7_3.BookDirectory;
+import com.kodilla.stream.book_7_3_i_7_5.BookDirectory;
 public class StreamMain {
     public static void main(String[] args) {
         BookDirectory theBookDirectory = new BookDirectory();
