@@ -8,7 +8,7 @@ public class ArrayOperationsTestSuite {
     @Test
     public void testGetAverage(){
         // Give
-        ArrayOperations.getAverage(new int[]{0, 1, 20, 3, 4});
+       // ArrayOperations.getAverage(new int[]{0, 1, 20, 3, 4});
 
         // When
         double result = ArrayOperations.getAverage(new int[]{0, 1, 20, 3, 4});
