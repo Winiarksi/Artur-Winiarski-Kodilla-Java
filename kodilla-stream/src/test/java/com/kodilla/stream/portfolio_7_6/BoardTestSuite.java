@@ -7,10 +7,9 @@ import com.kodilla.stream.portfolio_7_5.User;
 import org.junit.Assert;
 import org.junit.Test;
 import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.IntStream;
+
 
 public class BoardTestSuite {
     public Board prepareTestData() {
@@ -93,15 +92,13 @@ public class BoardTestSuite {
     }
 
     @Test
-    public void testAddTaskListAverageWorkingOnTask() {
+    public void testAddTaskListFindLongTasks() {
         //Given
         Board project = prepareTestData();
 
         //When
         List<TaskList> inProgressTasks = new ArrayList<>();
-
         inProgressTasks.add(new TaskList("In progress"));
-
         long longTasks = project.getTaskLists().stream()
                 .filter(inProgressTasks::contains)
                 .flatMap(tl -> tl.getTasks().stream())
@@ -109,14 +106,28 @@ public class BoardTestSuite {
                 .filter(d -> d.compareTo(LocalDate.now().minusDays(10)) <= 0)
                 .count();
 
-        System.out.println(longTasks);
-
-        double average = IntStream.range(0, Math.toIntExact(longTasks))
-                .map(n -> ChronoUnit.DAYS.between(n.getCreated(), LocalDate.now()))
-               .average().getAsDouble();
-
-        System.out.println(average);
         //Then
+        Assert.assertEquals(2, longTasks);
+    }
 
+    @Test
+    public void testAddTaskListAverageWorkingOnTask() {
+        //Given
+        Board project = prepareTestData();
+
+        //When
+        List<TaskList> inProgressTasks = new ArrayList<>();
+        inProgressTasks.add(new TaskList("In progress"));
+
+        //Then
+        double average = project.getTaskLists().stream()
+                .filter(inProgressTasks::contains)
+                .flatMap(tl -> tl.getTasks().stream())
+                .mapToInt(task -> (int)(LocalDate.now().toEpochDay() - task.getCreated().toEpochDay()))
+                .average()
+                .orElse(0.0);
+//        System.out.println(average);
+
+        Assert.assertEquals(10, average, 0.1);
     }
 }
