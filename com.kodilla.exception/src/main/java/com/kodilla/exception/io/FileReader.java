@@ -12,11 +12,11 @@ public class FileReader {
         ClassLoader classLoader = getClass().getClassLoader();
 
         try {
-
-        File file = new File(classLoader.getResource("fil/names.txt").getFile());
-        //Path path = Paths.get(file.getPath().replace("%20", " "));
-        Stream<String> fileLines = Files.lines(Paths.get(file.getPath().replace("%20", " ")));
-        fileLines.forEach(System.out::println);
+            System.out.println(classLoader.getResource("ddd.txt").getFile());
+            File file = new File(classLoader.getResource("fil/names.txt").getFile());
+            //Path path = Paths.get(file.getPath().replace("%20", " "));
+            Stream<String> fileLines = Files.lines(Paths.get(file.getPath().replace("%20", " ")));
+            fileLines.forEach(System.out::println);
 
         } catch ( IOException e) {
             System.out.println("Oh no! Something went wrong!" + e);
