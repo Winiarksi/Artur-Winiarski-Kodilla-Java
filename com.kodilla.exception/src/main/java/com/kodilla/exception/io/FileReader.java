@@ -13,7 +13,6 @@ public class FileReader {
         try {
 
             File file = new File(classLoader.getResource("file/ddnames.txt").getFile());
-            //Path path = Paths.get(file.getPath().replace("%20", " "));
             Stream<String> fileLines = Files.lines(Paths.get(file.getPath().replace("%20", " ")));
             fileLines.forEach(System.out::println);
 
