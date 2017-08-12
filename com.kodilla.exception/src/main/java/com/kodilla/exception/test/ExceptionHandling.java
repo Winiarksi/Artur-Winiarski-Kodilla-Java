@@ -16,7 +16,7 @@ public class ExceptionHandling {
             out.println("Problem while reading a file!");
             e1.printStackTrace(out);
         } finally {
-            out.println("Koniec");
+            out.println( "Koniec" );
         }
 
     }

@@ -12,7 +12,7 @@ public class ExceptionModuleRunner {
         try{
         fileReader.readFile();
         } catch(FileReaderException e) {
-            System.out.println("Problem while reading a file!");
+            System.out.println( "Problem while reading a file!" );
         }
 
     }
