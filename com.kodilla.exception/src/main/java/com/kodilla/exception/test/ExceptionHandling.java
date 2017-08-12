@@ -14,7 +14,7 @@ public class ExceptionHandling {
             secondChallenge.probablyIWillThrowException(0.5, 1.2);
         } catch (Exception e1) {
             out.println("Problem while reading a file!");
-            e1.printStackTrace(out);
+            e1.printStackTrace( out );
         } finally {
             out.println( "Koniec" );
         }
