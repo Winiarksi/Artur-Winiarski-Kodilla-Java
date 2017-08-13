@@ -1,19 +1,26 @@
 package com.kodilla.exception.main;
 
-import com.kodilla.exception.io.FileReader;
-import com.kodilla.exception.io.FileReaderException;
-import com.kodilla.exception.io.FileReaderWithoutHandling;
+
+import com.kodilla.exception.test.ExceptionHandling;
+import com.kodilla.exception.test.SecondChallenge;
+
+import static java.lang.System.out;
 
 public class ExceptionModuleRunner {
     public static void main(String args[]) {
 
-        FileReader fileReader = new FileReader ();
+        SecondChallenge secondChallenge = new SecondChallenge();
 
-        try{
-        fileReader.readFile();
-        } catch(FileReaderException e) {
-             System.out.println( "Problem while reading a file!" );
+        try {
+            secondChallenge.probablyIWillThrowException(0.5, 1.2);
+        } catch (ExceptionHandling e) {
+            out.println("Problem can be wrongly initiated variable!");
+            e.printStackTrace( out );
+        } finally {
+            out.println( "Koniec" );
         }
 
     }
 }
+
+
