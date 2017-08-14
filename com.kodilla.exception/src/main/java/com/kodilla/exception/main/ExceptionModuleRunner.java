@@ -16,6 +16,7 @@ public class ExceptionModuleRunner {
         } catch (ExceptionHandling e) {
             out.println("Problem can be wrongly initiated variable!");
             e.printStackTrace( out );
+            //System.out.println(e1)
         } finally {
             out.println( "Koniec" );
         }
