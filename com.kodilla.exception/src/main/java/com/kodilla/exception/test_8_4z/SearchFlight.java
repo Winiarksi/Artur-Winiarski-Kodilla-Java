@@ -7,28 +7,22 @@ public class SearchFlight {
     List<Flight> listAirport = new ArrayList<>();
 public SearchFlight(){
 
-    listAirport.add(new Flight("Wrocław", "Berlin") );
-    listAirport.add(new Flight("Kraków", "Londyn") );
-    listAirport.add(new Flight("Wrocław", "Moskwa") );
-    listAirport.add(new Flight("Barcelona", "Wrocław") );
-    listAirport.add(new Flight("Londyn", "Wrocław") );
-    listAirport.add(new Flight("Moskwa", "Berlin") );
+    listAirport.add (new Flight ("Wroclaw", "Berlin"));
+    listAirport.add (new Flight ("Krakow", "London"));
+    listAirport.add (new Flight ("Wroclaw", "Moscow"));
+    listAirport.add (new Flight ("Barcelona", "Wrocław"));
+    listAirport.add (new Flight ("London", "Wroclaw"));
+    listAirport.add (new Flight ("Moscow", "Berlin"));
 }
 
 
-    public void findFilght(Flight flight){
+    public void findFilght(Flight flight) throws  RouteNotFoundException{
 
-       System.out.println(listAirport.contains(flight));
-
-        for( Flight połączenie : listAirport ){
-          //  listAirport.contains(flight);
-            listAirport.size();
-            System.out.println(połączenie.getArrivalAirport());
-            System.out.println(listAirport.equals(flight));
-
+         for( Flight połączenie : listAirport ){
+            if ( !listAirport.contains(flight)) {
+                throw new RouteNotFoundException("\nOne of the given airports does not exist!");
+            }
         }
-
-
    }
 
     public Flight getFlight() {
