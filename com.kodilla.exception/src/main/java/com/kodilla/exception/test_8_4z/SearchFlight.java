@@ -10,7 +10,7 @@ public SearchFlight(){
     listAirport.add (new Flight ("Wroclaw", "Berlin"));
     listAirport.add (new Flight ("Krakow", "London"));
     listAirport.add (new Flight ("Wroclaw", "Moscow"));
-    listAirport.add (new Flight ("Barcelona", "Wroclaw"));
+    listAirport.add (new Flight ("Barcelona", "Berlin"));
     listAirport.add (new Flight ("London", "Wroclaw"));
     listAirport.add (new Flight ("Moscow", "Berlin"));
 }
