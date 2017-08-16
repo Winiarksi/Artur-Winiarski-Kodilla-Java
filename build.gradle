@@ -1,5 +1,5 @@
 apply plugin: 'java'
 
 dependencies {
-	compile project(':kodilla-testing')
+	testCompile 'junit:junit:4.12'
 }

@@ -18,7 +18,7 @@ public SearchFlight(){
 
     public void findFilght(Flight flight) throws  RouteNotFoundException{
 
-         for( Flight połączenie : listAirport ){
+         for( Flight connect : listAirport ){
             if ( !listAirport.contains(flight)) {
                 throw new RouteNotFoundException("\nOne of the given airports does not exist!");
             }

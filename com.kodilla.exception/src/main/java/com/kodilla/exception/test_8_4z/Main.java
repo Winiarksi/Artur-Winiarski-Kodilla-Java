@@ -9,7 +9,7 @@ public class Main {
         SearchFlight searchFlight = new SearchFlight();
 
         try {
-            searchFlight.findFilght(new Flight("Wrocław", "Berlin"));
+            searchFlight.findFilght(new Flight("Wroclaw", "Berlin"));
         } catch (RouteNotFoundException e) {
             e.printStackTrace(out);
         } finally {
