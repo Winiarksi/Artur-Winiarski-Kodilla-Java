@@ -1,4 +1,4 @@
-package challenges;
+package challenges.Module_9_1;
 
 import java.util.ArrayList;
 import java.util.HashMap;

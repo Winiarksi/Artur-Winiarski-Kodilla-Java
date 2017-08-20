@@ -1,10 +1,6 @@
-package challenges;
+package challenges.Module_9_1;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
-
 
 public class MainStore {
     public static void main(String[] args) {

@@ -4,4 +4,5 @@ include 'kodilla-exception'
 include 'com.kodilla.exception'
 include 'Test-modulu'
 include 'com.kodilla.good.patterns_'
+include 'kodilla-good-patterns'
 
