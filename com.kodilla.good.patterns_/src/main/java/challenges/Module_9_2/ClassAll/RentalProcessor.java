@@ -26,6 +26,7 @@ public class RentalProcessor {
 
         if(isRented) {
             informationService.inform(rentRequest.getUser());
+
             rentalRepository.createRental(
                     rentRequest.getUser(),
                     rentRequest.getFrom(),

@@ -2,18 +2,18 @@ package challenges.Zadanie_9_2.ClassAll;
 
 public class RentalDto {
     public User user;
-    public boolean isSolt;
+    public boolean isSold;
 
-    public RentalDto ( final User user, final boolean isSolt) {
+    public RentalDto ( final User user, final boolean isSold) {
         this.user = user;
-        this.isSolt = isSolt;
+        this.isSold = isSold;
     }
 
     public User getUser() {
         return user;
     }
 
-    public boolean isSolt() {
-        return isSolt;
+    public boolean isSold() {
+        return isSold;
     }
 }
