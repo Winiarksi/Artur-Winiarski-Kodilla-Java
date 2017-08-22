@@ -1,7 +1,6 @@
 package challenges.Zadanie_9_4;
 
 import challenges.Zadanie_9_4.ClassAll.*;
-import challenges.Zadanie_9_4.Interface.SendDealRepository;
 
 public class Application {
     public static void main(String[] args){
