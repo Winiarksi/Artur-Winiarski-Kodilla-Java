@@ -10,9 +10,9 @@ public class ResourceInformation {
     Set<Shop> theShopList = new HashSet<>();
 
     public Warehouse getShopList() {
-        theShopList.add(new HealthyShop("HealthyShop", "Pomidor", 120, 15.45));
-        theShopList.add(new HealthyShop("HealthyShop", "Pomidor", 120, 15.45));
-        theShopList.add(new HealthyShop("HealthyShop", "Pomidor", 120, 15.45));
+        theShopList.add(new HealthyShop("ExtraFoodShop", "Marchewka", 105, 3.45));
+        theShopList.add(new HealthyShop("GlutenFreeShop", "Pomidor", 120, 15.21));
+        theShopList.add(new HealthyShop("HealthyShop", "Pomidor", 200, 9.00));
 
         for (Shop s: theShopList) {
             System.out.println(s);
