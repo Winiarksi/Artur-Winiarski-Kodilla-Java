@@ -1,24 +1,21 @@
 package challenges.Zadanie_9_4_B;
 
-import challenges.Zadanie_9_4_B.Abstract.Shop;
 
-import java.util.Set;
+
 
 public class Applicatoin_9_4B {
     public static void main(String[] args){
 
-        ShopResourceInformation shopResourceInformation = new ShopResourceInformation();
 
-        Warehouse warehouse = shopResourceInformation.theCompanyList();
-
-   /*     OrderProcess orderProcess = new OrderProcess();
-        orderProcess.process(warehouse);
+/*        healthyShop.process();
+        healthyShop.getCompanyName();
 */
-        OrderProcess orderProcess = new OrderProcess(
-                new MailService()
-        );
+        ResourceInformation resourceInformation = new ResourceInformation();
+        Warehouse warehouse = resourceInformation.getShopList();
+        warehouse.viewWarehouse();
+        //OrderProcess orderProcess = new OrderProcess(warehouse);
 
-        orderProcess.process(warehouse);
+          //  orderProcess.closingTransaction();
 
     }
 }
