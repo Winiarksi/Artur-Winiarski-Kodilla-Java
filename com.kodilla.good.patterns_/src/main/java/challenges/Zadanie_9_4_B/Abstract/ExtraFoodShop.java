@@ -1,16 +1,9 @@
 package challenges.Zadanie_9_4_B.Abstract;
 
 public class ExtraFoodShop extends Shop{
-    private String companyName;
-    private String commodity;//towar
-    private int quantityOfCommodity; //Ilość towaru
-    private double price;
 
     public ExtraFoodShop(String companyName, String commodity, int quantityOfCommodity, double price) {
-        this.companyName = companyName;
-        this.commodity = commodity;
-        this.quantityOfCommodity = quantityOfCommodity;
-        this.price = price;
+        super(companyName, commodity, quantityOfCommodity, price);
     }
 
     public void process() {

@@ -3,16 +3,9 @@ package challenges.Zadanie_9_4_B.Abstract;
 import java.util.Random;
 
 public class GlutenFreeShop extends Shop {
-    private String companyName;
-    private String commodity;//towar
-    private int quantityOfCommodity; //Ilość towaru
-    private double price;
 
-    public GlutenFreeShop(String companyName, String commodity, int quantityOfCommodity , double price) {
-        this.companyName = companyName;
-                this.commodity = commodity;
-                this.quantityOfCommodity = quantityOfCommodity;
-                this.price = price;
+    public GlutenFreeShop(String companyName, String commodity, int quantityOfCommodity, double price) {
+        super(companyName, commodity, quantityOfCommodity, price);
     }
 
     public void process() {
