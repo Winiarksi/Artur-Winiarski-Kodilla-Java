@@ -27,7 +27,7 @@ public class ExtraFoodShop extends Shop{
         if(quantityOfCommodity > 100) {
             price *= 0.85;
             System.out.println("Zamówienie przekroczyło sto sztók towaru.");
-            System.out.println("Uzyskany rabat 25% wartości towaru.\n");
+            System.out.println("Uzyskany rabat 25% wartości towaru.");
         }
     }
 
@@ -46,13 +46,8 @@ public class ExtraFoodShop extends Shop{
 
     @Override
     public int hashCode() {
-        int result;
-        long temp;
-        result = companyName.hashCode();
+        int result = companyName.hashCode();
         result = 31 * result + commodity.hashCode();
-        result = 31 * result + quantityOfCommodity;
-        temp = Double.doubleToLongBits(price);
-        result = 31 * result + (int) (temp ^ (temp >>> 32));
         return result;
     }
 }

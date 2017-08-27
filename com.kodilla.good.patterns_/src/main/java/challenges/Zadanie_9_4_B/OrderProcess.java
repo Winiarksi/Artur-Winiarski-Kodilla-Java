@@ -2,29 +2,30 @@ package challenges.Zadanie_9_4_B;
 
 import challenges.Zadanie_9_4_B.Abstract.Shop;
 
-import java.util.Set;
+import java.util.HashSet;
 
 public class OrderProcess {
 
-
     Warehouse warehouse;
+    HashSet<Shop> theShopList = new HashSet<>();
 
-    Set<Shop> theShopList = warehouse.getShopList();
-
-
-   // warehouse.getShopList();
-  //  List<Company> companyList = warehouse.getTheCompanyList();
-
-
-    public OrderProcess(final Warehouse warehouse) {
+    public OrderProcess(Warehouse warehouse) {
         this.warehouse = warehouse;
     }
 
-    protected void closingTransaction() {
-    for(Shop order : theShopList){
-        System.out.println(order);
+    public HashSet<Shop> getShopList(){
+        this.theShopList = warehouse.getShopList();
+
+        return theShopList;
+    }
+
+    public void SeparationOfClassesFromTheCollection(){
+
+        for (Shop shops: theShopList) {
+            shops.process();
         }
     }
 }
+
 
 

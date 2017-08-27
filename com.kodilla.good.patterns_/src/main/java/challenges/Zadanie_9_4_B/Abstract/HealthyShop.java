@@ -23,10 +23,6 @@ public class HealthyShop extends Shop {
         sendEmailToManufacturer();
     }
 
-    public String getCompanyName() {
-        return companyName;
-    }
-
     public void sendEmailToManufacturer() {
         System.out.print("@ od HealthyShop do Producenta: \nZamówienie na " + commodity + ", w ilości ");
         System.out.printf("%.0f", (quantityOfCommodity * 1.5));
@@ -48,13 +44,9 @@ public class HealthyShop extends Shop {
 
     @Override
     public int hashCode() {
-        int result;
-        long temp;
-        result = companyName.hashCode();
+        int result = companyName.hashCode();
         result = 31 * result + commodity.hashCode();
-        result = 31 * result + quantityOfCommodity;
-        temp = Double.doubleToLongBits(price);
-        result = 31 * result + (int) (temp ^ (temp >>> 32));
         return result;
     }
 }
+

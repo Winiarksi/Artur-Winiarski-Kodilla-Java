@@ -1,22 +1,21 @@
 package challenges.Zadanie_9_4_B;
 
+import challenges.Zadanie_9_4_B.Abstract.ExtraFoodShop;
+import challenges.Zadanie_9_4_B.Abstract.GlutenFreeShop;
 import challenges.Zadanie_9_4_B.Abstract.HealthyShop;
 import challenges.Zadanie_9_4_B.Abstract.Shop;
 
 import java.util.HashSet;
-import java.util.Set;
 
 public class ResourceInformation {
-    Set<Shop> theShopList = new HashSet<>();
+    HashSet<Shop> theShopList = new HashSet<>();
 
     public Warehouse getShopList() {
-        theShopList.add(new HealthyShop("ExtraFoodShop", "Marchewka", 105, 3.45));
-        theShopList.add(new HealthyShop("GlutenFreeShop", "Pomidor", 120, 15.21));
-        theShopList.add(new HealthyShop("HealthyShop", "Pomidor", 200, 9.00));
+        theShopList.add(new HealthyShop("HealthyShop", "Marchewka", 105, 3.45));
+        theShopList.add(new GlutenFreeShop("GlutenFreeShop", "Pomidor", 120, 15.21));
+        theShopList.add(new ExtraFoodShop("ExtraFoodShop", "Pomidor", 200, 9.00));
 
-        for (Shop s: theShopList) {
-            System.out.println(s);
-        }
         return new Warehouse(theShopList);
     }
+
 }
