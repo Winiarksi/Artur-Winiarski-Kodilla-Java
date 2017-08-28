@@ -3,12 +3,11 @@ package challenges.Zadanie_9_4_B;
 import challenges.Zadanie_9_4_B.Abstract.Shop;
 
 import java.util.HashSet;
-import java.util.Set;
 
 // zbiór informacji, magazyn
 public class Warehouse {
 
-    HashSet<Shop> theShopList = new HashSet<>();
+    private HashSet<Shop> theShopList = new HashSet<>();
 
     public Warehouse(HashSet<Shop> theShopList) {
         this.theShopList = theShopList;

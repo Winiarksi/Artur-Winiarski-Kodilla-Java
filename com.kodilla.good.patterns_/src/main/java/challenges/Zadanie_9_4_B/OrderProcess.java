@@ -6,20 +6,18 @@ import java.util.HashSet;
 
 public class OrderProcess {
 
-    Warehouse warehouse;
-    HashSet<Shop> theShopList = new HashSet<>();
+    private Warehouse warehouse;
+    private HashSet<Shop> theShopList = new HashSet<>();
 
     public OrderProcess(Warehouse warehouse) {
         this.warehouse = warehouse;
     }
 
-    public HashSet<Shop> getShopList(){
+    public void getShopList(){
         this.theShopList = warehouse.getShopList();
-
-        return theShopList;
     }
 
-    public void SeparationOfClassesFromTheCollection(){
+    public void separationOfClassesFromTheCollection(){
 
         for (Shop shops: theShopList) {
             shops.process();

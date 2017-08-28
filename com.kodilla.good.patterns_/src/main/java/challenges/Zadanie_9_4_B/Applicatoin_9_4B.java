@@ -7,7 +7,6 @@ public class Applicatoin_9_4B {
         Warehouse warehouse = resourceInformation.getShopList();
         OrderProcess orderProcess = new OrderProcess(warehouse);
         orderProcess.getShopList();
-        orderProcess.SeparationOfClassesFromTheCollection();
-
+        orderProcess.separationOfClassesFromTheCollection();
     }
 }
