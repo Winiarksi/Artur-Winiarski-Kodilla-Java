@@ -8,7 +8,7 @@ public class Application {
         flightInformation.searchConnetionFromCity("Wroclaw");
         flightInformation.searchConnetionToCity("Berlin");
 //        flightInformation.showDirectConnection();
-        flightInformation.showConnectionWithChangeovers();
+        flightInformation.showConnectionWithChangeovers("Wroclaw", "Berlin");
 
     }
 }

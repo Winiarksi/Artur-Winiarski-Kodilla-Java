@@ -14,11 +14,15 @@ public class FlightInformation {
         theListCityConnection.add( new Connection("Wroclaw", "Gdansk" ));
         theListCityConnection.add( new Connection("Berlin", "Paryż" ));
         theListCityConnection.add( new Connection("Gdansk", "Berlin" ));
+        theListCityConnection.add( new Connection("Paryż", "Berlin" ));
+        theListCityConnection.add( new Connection("Wroclaw", "Warszawa" ));
+        theListCityConnection.add( new Connection("Warszawa", "Berlin" ));
+        theListCityConnection.add( new Connection("Wroclaw", "Poznan" ));
     }
 
     public Set<Connection> searchConnetionFromCity(String cityFrom){
 
-        collect1 = theListCityConnection.stream()
+        Set<Connection> collect1 = theListCityConnection.stream()
                 .filter(n -> n.getCityFrom().equals(cityFrom))
                 .collect(Collectors.toSet());
 
@@ -27,11 +31,11 @@ public class FlightInformation {
 
     public Set<Connection> searchConnetionToCity(String cityTo){
 
-        collect2 = theListCityConnection.stream()
+        Set<Connection> collect2 = theListCityConnection.stream()
                 .filter(n -> n.getCityTo().equals(cityTo))
                 .collect(Collectors.toSet());
 
-        return this.collect2;
+        return collect2;
     }
 
     public void showDirectConnection(){
@@ -50,18 +54,32 @@ public class FlightInformation {
     }
 
 
-    public void showConnectionWithChangeovers(){
-        for ( Connection e: collect1
-             ) {
+    public void showConnectionWithChangeovers(String cityFrom, String cityTo ) {
 
-            for (Connection f: collect2
-                 ) {
-                    if(f.getCityFrom().equals(e.getCityTo())){
-                    System.out.println(e.getCityFrom() + " " + e.getCityTo());
-                    System.out.println(f.getCityFrom() + " " + f.getCityTo());
+        Set<Connection> collect3 = theListCityConnection.stream()
+                .filter(n -> n.getCityFrom().equals(cityFrom))
+                .collect(Collectors.toSet());
+
+        Set<Connection> collect4 = theListCityConnection.stream()
+                .filter(n -> n.getCityTo().equals(cityTo))
+                .collect(Collectors.toSet());
+
+
+        for (Connection e : collect3
+                ) {
+
+            for (Connection f : collect4
+                    ) {
+
+                if (e.getCityFrom().equals(cityFrom) || e.getCityFrom().equals(cityTo)) {
+
+                    if (e.getCityTo().equals(f.getCityFrom())) {
+                        System.out.println(e.getCityFrom() + " " + e.getCityTo());
+                        System.out.println(f.getCityFrom() + " " + f.getCityTo());
+                        System.out.println("###################################");
+                    }
                 }
             }
         }
-    }
 
-}
+    }}
