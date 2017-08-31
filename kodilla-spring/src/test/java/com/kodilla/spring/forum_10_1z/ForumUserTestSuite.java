@@ -19,7 +19,7 @@ public class ForumUserTestSuite {
 
         ForumUser forumUser = context.getBean(ForumUser.class);
         // Czemu tu trzeba było potórzyć tą samą klasę, tzn zainicjować ją a potem wrzucić do getBean?
-
+        // getClass()
         //When
         String name = forumUser.getUsername();
 
