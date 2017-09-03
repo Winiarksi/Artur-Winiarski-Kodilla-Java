@@ -13,10 +13,4 @@ public class TaskList {
     public List<String> getTasks() {
         return tasks;
     }
-
-    public void setTasks(String text) {
-        List<String> tasks = new ArrayList<>();
-        tasks.add(text);
-        this.tasks = tasks;
-    }
 }

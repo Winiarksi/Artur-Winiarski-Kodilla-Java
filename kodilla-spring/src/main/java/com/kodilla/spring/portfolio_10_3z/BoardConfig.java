@@ -6,7 +6,6 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class BoardConfig {
 
-
     @Bean
     public Board getBean()   {
         return new Board(getToDoList(), getInProgressList(), getDoneList());
@@ -14,9 +13,7 @@ public class BoardConfig {
 
     @Bean
     public TaskList getToDoList() {
-
-
-        return new TaskList();
+    return new TaskList();
     }
 
     @Bean
@@ -26,13 +23,6 @@ public class BoardConfig {
 
     @Bean
     public TaskList getDoneList() {
-
         return new TaskList();
     }
 }
-
-/*
-Napisz klasę konfigurującą Beany o nazwie BoardConfig,
-która utworzy trzy różne Beany reprezentujące listy zadań
-i wstrzyknie je do Beana klasy Board.
- */
