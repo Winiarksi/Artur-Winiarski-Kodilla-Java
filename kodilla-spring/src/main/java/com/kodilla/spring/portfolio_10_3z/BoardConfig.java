@@ -16,7 +16,7 @@ public class BoardConfig {
     public TaskList getToDoList() {
 
 
-        return new TaskList("getToDoList");
+        return new TaskList();
     }
 
     @Bean
