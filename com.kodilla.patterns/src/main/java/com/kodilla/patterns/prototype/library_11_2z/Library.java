@@ -29,7 +29,7 @@ public final class Library  extends Prototype {
         this.books = books;
     }
 
-    @Override // coś nad tym zapisem trzeba pogłówkować, bo chyba nie do końca łapię
+    @Override
     public String toString(){
         String s = "Library [" + name + "]\n";
         for (Book book : books) {
@@ -50,8 +50,4 @@ public final class Library  extends Prototype {
         }
         return cloneLibrary;
     }
-
-
-
-
 }

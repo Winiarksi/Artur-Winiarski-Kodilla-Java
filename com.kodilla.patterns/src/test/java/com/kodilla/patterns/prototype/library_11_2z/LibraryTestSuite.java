@@ -2,9 +2,7 @@ package com.kodilla.patterns.prototype.library_11_2z;
 
 import org.junit.Assert;
 import org.junit.Test;
-
 import java.time.LocalDate;
-
 
 public class LibraryTestSuite {
 
@@ -17,7 +15,6 @@ public class LibraryTestSuite {
         library.getBooks().add(new Book("Największa rozpustnica Aleksadrysjka", "Niwierny", LocalDate.of(1112, 4, 10)));
         library.getBooks().add(new Book("Ostatnia walka: moje życie jako lotnika, przemytnika i poszukiwacza przygód", "Jan Zumbach", LocalDate.of(2001, 01, 10)));
         library.getBooks().add(new Book("Africanus, Wojna w Italii", "Santiago Posteguillo", LocalDate.now()));
-
 
         //making a shallow copy of object Library
         Library shallowLibrary = null;
@@ -58,12 +55,3 @@ public class LibraryTestSuite {
         Assert.assertNotEquals(shallowLibrary.getBooks(), deepCloneLibrary.getBooks());
     }
 }
-
-
-/*
-zawierający test testGetBooks().
-W teście stwórz:
-1   obiekt biblioteki
-2   kilka obiektów książek
-3   dodaj je do księgozbioru.
-*/
