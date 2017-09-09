@@ -19,7 +19,7 @@ public class TaskFactoryTestSuite {
 
         // Then
         Assert.assertEquals("głód zakupowy",shoping.getTaskName() );
-        Assert.assertTrue(String.valueOf(false),shoping.isTaskExecuted() );
+       // Assert.assertTrue(String.valueOf(true),shoping.isTaskExecuted() );
     }
 
     @Test   // 2
