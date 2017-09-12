@@ -23,18 +23,17 @@ public class TaskListDaoTestSuite {
     public void testFindByListName(){
         //  Given
         TaskList taskList = new TaskList(LISTNAME, DESCRIPTION);
-        //  When
         taskListDao.save(taskList);
+        String listName = taskList.getListName();
+
+        //  When
+        List<TaskList> readTaskList = taskListDao.findByListName(listName);
 
         //  Then
-        int id = taskList.getId();
-        TaskList readTaskiList = taskListDao.findOne(id); // chyba zajeżdza tu hipokryzją
-        Assert.assertEquals(id, .getId());
+        Assert.assertEquals(1, readTaskList.size());
+
         //  CleanUp
-
+        int id = readTaskList.get(0).getId();
+        taskListDao.delete(id);
     }
-
-    //  sprawdzający czy metoda findByListName(String listName) działa poprawnie
-
-
 }
