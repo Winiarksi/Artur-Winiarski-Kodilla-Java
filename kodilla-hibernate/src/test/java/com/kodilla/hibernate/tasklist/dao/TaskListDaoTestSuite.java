@@ -35,5 +35,8 @@ public class TaskListDaoTestSuite {
         //  CleanUp
         int id = readTaskList.get(0).getId();
         taskListDao.delete(id);
+
+    //  wyjaśnic czemy lista taskListDao się nie kasuje
+
     }
 }
