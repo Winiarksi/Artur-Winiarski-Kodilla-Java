@@ -31,7 +31,7 @@ public class Product {
 
     @NotNull
     @Column(name="NAME")
-    private String getName() {
+    public String getName() {
         return name;
     }
 
@@ -50,7 +50,7 @@ public class Product {
         this.items = items;
     }
 
-    public void setId(int id) {
+    private void setId(int id) {
         this.id = id;
     }
 

@@ -52,8 +52,7 @@ public final class Task {
     public TaskFinancialDetails getTaskFinancialDetails() {
         return taskFinancialDetails;
     }
-    //Wartość CascadeType.REMOVE oznacza, że gdy usuwamy rekord z tabeli TASKS,
-    // to automatycznie (kaskadowo) usunięty zostanie odpowiadający mu rekord z tabeli TASKS_FINANCIALS.
+
 
     @ManyToOne
     @JoinColumn(name="TASKLIST_ID")
