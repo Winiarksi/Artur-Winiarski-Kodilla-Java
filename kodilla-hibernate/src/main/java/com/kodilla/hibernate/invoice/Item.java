@@ -1,8 +1,3 @@
-/*
-Zrób z niej encję (zauważ, że występuje tu relacja N:1 z encją Product).
- Napisz kontroler repozytorium (w podpakiecie dao)
- */
-
 package com.kodilla.hibernate.invoice;
 
 import javax.persistence.*;
@@ -23,10 +18,9 @@ public class Item {
 
     }
 
-    public Item(BigDecimal price, int quantity, BigDecimal value) {
+    public Item(BigDecimal price, int quantity) {
         this.price = price;
         this.quantity = quantity;
-        this.value = value;
     }
 
     @Id
@@ -52,6 +46,8 @@ public class Item {
     @NotNull
     @Column(name = "VALUE")
     public BigDecimal getValue() {
+        BigDecimal q = new BigDecimal(quantity);
+        value = price.multiply(q);
         return value;
     }
 
@@ -91,7 +87,3 @@ public class Item {
         this.invoice = invoice;
     }
 }
-
-/*
-). Zrób z niej encję (zauważ, że występuje tu relacja N:1 z encją
- */

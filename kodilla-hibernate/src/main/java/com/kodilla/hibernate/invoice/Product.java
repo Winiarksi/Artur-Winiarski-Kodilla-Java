@@ -34,17 +34,16 @@ public class Product {
     public String getName() {
         return name;
     }
-
+/*
     @OneToMany(
             targetEntity = Item.class,
             mappedBy = "product",
             cascade = CascadeType.ALL,
             fetch = FetchType.LAZY
     )
-
     public List<Item> getItems() {
         return items;
-    }
+    }*/
 
     private void setItems(List<Item> items) {
         this.items = items;

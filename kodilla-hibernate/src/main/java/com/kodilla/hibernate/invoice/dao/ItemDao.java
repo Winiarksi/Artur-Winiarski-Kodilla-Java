@@ -6,5 +6,5 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 
 public interface ItemDao extends CrudRepository<Item, Integer>{
-    List<Item> findByQuantity(String quantity);
+    List<Item> findByQuantity(int quantity);
 }
