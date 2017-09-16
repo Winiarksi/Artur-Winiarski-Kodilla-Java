@@ -16,9 +16,11 @@ import java.util.List;
 public class CompanyDaoTestSuite {
     @Autowired
     CompanyDao companyDao;
+    @Autowired
+    EmployeeDao employeeDao;
 
     @Test
-    public void testSaveManyToMany(){
+    public void testSaveManyToMany() {
         //Given
         Employee johnSmith = new Employee("John", "Smith");
         Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
@@ -54,16 +56,17 @@ public class CompanyDaoTestSuite {
         Assert.assertNotEquals(0, greyMatterId);
 
         //CleanUp
-     //           /try {
-            //    companyDao.delete(softwareMachineId);
-            //    companyDao.delete(dataMaestersId);
-            //    companyDao.delete(greyMatterId);
-            //} catch (Exception e) {
-            //    //do nothing
-            //}
-        }
+        //           /try {
+        //    companyDao.delete(softwareMachineId);
+        //    companyDao.delete(dataMaestersId);
+        //    companyDao.delete(greyMatterId);
+        //} catch (Exception e) {
+        //    //do nothing
+        //}
+    }
+
     @Test
-    public void testHqlAndNamedQueries(){
+    public void testHqlAndNamedQueries() {
         //Given
         Employee johnSmith = new Employee("John", "Smith");
         Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
@@ -86,32 +89,27 @@ public class CompanyDaoTestSuite {
         lindaKovalsky.getCompanies().add(greyMatter);
 
         //When
-
+        companyDao.save(dataMaesters);
         List<Company> result = companyDao.findForSelectedBusinessNames();
         int id = result.get(0).getId();
-        companyDao.save(softwareMachine);
-        Assert.assertEquals(1, id);
-
-
-        int softwareMachineId = softwareMachine.getId();
-
-/*
-        companyDao.save(dataMaesters);
         int dataMaestersId = dataMaesters.getId();
-        companyDao.save(greyMatter);
-        int greyMatterId = greyMatter.getId();
-*/
+
+        employeeDao.save(lindaKovalsky);
+        List<Employee> resultEmployee = employeeDao.findEmployeeLastName("Kovalsky");
+        int idEmployee = resultEmployee.get(0).getId();
+        int lindaKovalskyId = lindaKovalsky.getId();
+
         //Then
+        Assert.assertEquals(dataMaestersId, id);
+        Assert.assertEquals(lindaKovalskyId, idEmployee);
 
         //CleanUp
- /*       try {
-            companyDao.delete(softwareMachineId);
-      //      companyDao.delete(dataMaestersId);
-      //      companyDao.delete(greyMatterId);
+        try {
+            companyDao.delete(dataMaestersId);
+            companyDao.delete(lindaKovalskyId);
+
         } catch (Exception e) {
             //do nothing
         }
-  */  }
-
-
-        }
+    }
+}

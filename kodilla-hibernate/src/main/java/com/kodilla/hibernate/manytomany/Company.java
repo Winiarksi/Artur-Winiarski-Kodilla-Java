@@ -8,7 +8,6 @@ import java.util.List;
 @NamedNativeQuery(
         name = "Company.findForSelectedBusinessNames",
         query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME LIKE 'Dat%'",
-       // query = "SELECT * FROM Company WHERE nameCompany LIKE 'Dat%'",
         resultClass = Company.class
 )
 

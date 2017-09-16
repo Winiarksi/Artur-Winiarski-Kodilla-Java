@@ -16,10 +16,7 @@ public interface CompanyDao extends CrudRepository<Company, Integer> {
 
     @Query(nativeQuery = true)
     List<Company> findForSelectedBusinessNames();
-/*
-    @Query
-    List<Company> findEmployeeLastName(@Param("LASTNAME") String lastname);
-*/
+
 }
 
 /*
