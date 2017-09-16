@@ -12,14 +12,6 @@ import java.util.List;
 @Repository
 public interface CompanyDao extends CrudRepository<Company, Integer> {
 
-  //  List<Company> findByDuration(int duration);
-
     @Query(nativeQuery = true)
     List<Company> findForSelectedBusinessNames();
-
 }
-
-/*
-Zmodyfikuj kontrolery repozytorium encji Employee oraz Company tak, aby udostępniały metody zwracające dane wyszukiwane przy pomocy named queries
-
- */
