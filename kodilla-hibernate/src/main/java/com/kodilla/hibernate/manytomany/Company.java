@@ -5,18 +5,25 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+@NamedNativeQuery(
+        name = "Company.findForSelectedBusinessNames",
+        query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME LIKE 'Dat%'",
+       // query = "SELECT * FROM Company WHERE nameCompany LIKE 'Dat%'",
+        resultClass = Company.class
+)
+
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
     private int id;
-    private String name;
+    private String nameCompany;
     private List<Employee> employees = new ArrayList<>();
 
     public Company() {
     }
 
-    public Company(String name) {
-        this.name = name;
+    public Company(String nameCompany) {
+        this.nameCompany = nameCompany;
     }
 
     @Id
@@ -30,7 +37,7 @@ public class Company {
     @NotNull
     @Column(name = "COMPANY_NAME")
     public String getName() {
-        return name;
+        return nameCompany;
     }
 
     @ManyToMany(cascade = CascadeType.ALL, mappedBy = "companies")
@@ -47,6 +54,6 @@ public class Company {
     }
 
     private void setName(String name) {
-        this.name = name;
+        this.nameCompany = name;
     }
 }

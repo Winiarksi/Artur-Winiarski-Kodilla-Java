@@ -22,8 +22,6 @@ public class InvoiceDaoTestSuite {
     @Autowired
     private ProductDao productDao;
 
-
-
     @Test
     public void testInvoiceDaoSave(){
         //  Given
@@ -66,7 +64,6 @@ public class InvoiceDaoTestSuite {
         System.out.println(readInvoice.size());
         System.out.println(readInvoice.get(0).getId());
 
-
         Assert.assertEquals(1, readInvoice.get(0).getId());
 
         try {
@@ -80,12 +77,4 @@ public class InvoiceDaoTestSuite {
             // do nothing
         }
     }
-
-
 }
-
-
-/*
-Napisz test o nazwie testInvoiceDaoSave(), który sprawdza czy faktura z kilkoma pozycjami zapisuje się poprawnie w bazie danych
-Pamiętaj, że test musi być idempotentny (musi zostawiać bazę danych w stanie takim, w jakim ją zastał - bez nowych wpisów)
- */
