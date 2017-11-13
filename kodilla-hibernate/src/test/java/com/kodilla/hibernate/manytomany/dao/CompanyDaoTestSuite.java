@@ -90,7 +90,7 @@ public class CompanyDaoTestSuite {
 
         //When
         companyDao.save(dataMaesters);
-        List<Company> result = companyDao.findForSelectedBusinessNames();
+        List<Company> result = companyDao.findForSelectedBusinessNames("Dat%");
         int id = result.get(0).getId();
         int dataMaestersId = dataMaesters.getId();
 
