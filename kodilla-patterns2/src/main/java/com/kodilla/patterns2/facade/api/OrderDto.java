@@ -1,4 +1,23 @@
 package com.kodilla.patterns2.facade.api;
 
-public class OrderDto {
+import java.util.ArrayList;
+import java.util.List;
+
+public class OrderDto {     // klasa transportowa dla zamówienia
+    private final List<ItemDto> items = new ArrayList<>();
+
+    public void addItem(final ItemDto item) {
+        items.add(item);
+    }
+
+    public List<ItemDto> getItems() {
+        return items;
+    }
+
+    @Override
+    public String toString() {
+        return "OrderDto{" +
+                "items=" + items +
+                '}';
+    }
 }

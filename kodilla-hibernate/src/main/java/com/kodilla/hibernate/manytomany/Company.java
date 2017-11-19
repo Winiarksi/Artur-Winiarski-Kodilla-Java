@@ -54,4 +54,5 @@ public class Company {
     private void setName(String name) {
         this.nameCompany = name;
     }
-}
+
+    }

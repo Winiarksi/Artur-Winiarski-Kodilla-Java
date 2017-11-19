@@ -99,6 +99,10 @@ public class CompanyDaoTestSuite {
         int idEmployee = resultEmployee.get(0).getId();
         int lindaKovalskyId = lindaKovalsky.getId();
 
+        System.out.println("\nidEmployee: " + idEmployee);
+        System.out.println(" #### ");
+        System.out.println( "\nlindaKovalskyId: " + lindaKovalskyId);
+
         //Then
         Assert.assertEquals(dataMaestersId, id);
         Assert.assertEquals(lindaKovalskyId, idEmployee);
