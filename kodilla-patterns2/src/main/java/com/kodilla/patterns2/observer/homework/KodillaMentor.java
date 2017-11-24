@@ -1,24 +1,28 @@
 package com.kodilla.patterns2.observer.homework;
 
-public class KodillaUser implements MentorObserver{
+public class KodillaMentor implements MentorObserver{
     private final String mentorName;
-    private int messagesNumber;
+    private String lastMessage;
 
-    public KodillaUser(String mentorName) {
+    public KodillaMentor(String mentorName) {
         this.mentorName = mentorName;
     }
 
     @Override
-    public void update(KodillaModule kodillaModule) {
+    public void update(KodillaStudent kodillaStudent) {
+        System.out.println("Montor " + mentorName + " was notified by "
+                + kodillaStudent.getStudentName() + ": ");
 
+        lastMessage = kodillaStudent.getMessages().get(kodillaStudent.getMessages().size() -1);
+
+        System.out.println(lastMessage);
+    }
+
+    public String getLastMessage() {
+        return lastMessage;
     }
 
     public String getMentorName() {
         return mentorName;
     }
-
-    public int getMessagesNumber() {
-        return messagesNumber;
-    }
-
 }

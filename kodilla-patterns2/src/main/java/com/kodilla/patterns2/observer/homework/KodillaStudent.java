@@ -3,19 +3,20 @@ package com.kodilla.patterns2.observer.homework;
 import java.util.ArrayList;
 import java.util.List;
 
-public class KodillaModule implements ObservableStudent{
+public class KodillaStudent implements ObservableStudent{
     private final List<MentorObserver> mentorObservers;
     private final List<String> messages;
-    private final String messageTask;
+    private final String studentName;
 
-    public KodillaModule(String messageTask) {
+    public KodillaStudent(final String studentName) {
         mentorObservers = new ArrayList<>();
         messages = new ArrayList<>();
-        this.messageTask = messageTask;
+        this.studentName = studentName;
     }
 
-    public void addRequest(String request){
-        messages.add(request);
+    public void addMessage(String message){
+        messages.add(message);
+        notifyMentorObserver();
     }
 
     @Override
@@ -26,12 +27,24 @@ public class KodillaModule implements ObservableStudent{
     @Override
     public void notifyMentorObserver() {
         for(MentorObserver mentorObserver : mentorObservers){
-        mentorObserver.update(this);
+            mentorObserver.update(this);
         }
     }
 
     @Override
     public void removeMentorObserver(MentorObserver mentorObserver) {
-        mentorObservers.add(mentorObserver);
+        mentorObservers.remove(mentorObserver);
+    }
+
+    public List<String> getMessages() {
+        return messages;
+    }
+
+    public String getStudentName() {
+        return studentName;
+    }
+
+    public List<MentorObserver> getMentorObservers() {
+        return mentorObservers;
     }
 }

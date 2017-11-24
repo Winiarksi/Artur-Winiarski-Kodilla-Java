@@ -20,13 +20,12 @@ public class ForumTopic implements Observable{
         notifyObservers();
     }
 
-
     @Override
     public void registerObserver(Observer observer) {
         observers.add(observer);
     }
 
-@Override
+    @Override
     public void notifyObservers() {
         for(Observer observer : observers){
             observer.update(this); // ???
