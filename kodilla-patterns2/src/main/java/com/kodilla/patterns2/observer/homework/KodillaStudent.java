@@ -3,12 +3,12 @@ package com.kodilla.patterns2.observer.homework;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TaskQueue implements ObservableStudent{
+public class KodillaModule implements ObservableStudent{
     private final List<MentorObserver> mentorObservers;
     private final List<String> messages;
     private final String messageTask;
 
-    public TaskQueue(String messageTask) {
+    public KodillaModule(String messageTask) {
         mentorObservers = new ArrayList<>();
         messages = new ArrayList<>();
         this.messageTask = messageTask;
