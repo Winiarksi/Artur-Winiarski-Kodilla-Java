@@ -5,6 +5,7 @@ import com.kodilla.hibernate.task.TaskFinancialDetails;
 import com.kodilla.hibernate.task.TaskList;
 import com.kodilla.hibernate.tasklist.dao.TaskListDao;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,7 @@ public class TaskDaoTestSuite {
     private static final String DESCRIPTION = "Test: Learn Hibernate";
     private static final String LISTNAME = "ToDo List";
 
+    @Ignore
     @Test
     public void testTaskDaoSave() {
         //Given
@@ -41,6 +43,7 @@ public class TaskDaoTestSuite {
 //        taskDao.delete(id);
     }
 
+    @Ignore
     @Test
     public void testTaskDaoFindByDuration() {
         //Given
@@ -59,6 +62,7 @@ public class TaskDaoTestSuite {
         taskDao.delete(id);
     }
 
+    @Ignore
     @Test // moduł 13.3
     public void testTaskDaoSaveWithFinancialDetails() {
         //Given
@@ -76,7 +80,7 @@ public class TaskDaoTestSuite {
         //taskDao.delete(id);
     }
 
-
+    @Ignore
     @Test // Moduł 13.4
     public void testNamedQueries() {
         //Given
