@@ -2,7 +2,7 @@ package com.kodilla.testing.weather.stub;
 
 import java.util.HashMap;
 
-// STUB
+// Stub
 public class TemperaturesStub implements Temperatures {
 
     @Override
