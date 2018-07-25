@@ -1,4 +1,9 @@
 apply plugin: 'java'
 
 dependencies {
+
+// https://mvnrepository.com/artifact/org.mockito/mockito-core
+    testCompile group: 'org.mockito', name: 'mockito-core', version: '1.10.19'
+
+
 }
