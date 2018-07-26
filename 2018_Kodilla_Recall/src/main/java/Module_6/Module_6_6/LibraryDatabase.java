@@ -5,7 +5,7 @@ import java.util.List;
 public interface LibraryDatabase {
 
     List<Book> listBooksWithCondition(String titleFragment);
-    List<Book> listBooksInHandsOf(String libraryUser);
+    List<Book> listBooksInHandsOf(LibraryUser libraryUser);
 
     boolean rentABook(LibraryUser libraryUser, Book book);
 

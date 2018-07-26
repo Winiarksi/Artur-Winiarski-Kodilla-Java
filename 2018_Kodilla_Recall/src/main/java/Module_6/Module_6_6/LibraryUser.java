@@ -19,15 +19,15 @@ public class LibraryUser {
         if (this == o) return true;
         if (!(o instanceof LibraryUser)) return false;
         LibraryUser that = (LibraryUser) o;
-        return Objects.equals(firstname, that.firstname) &&
-                Objects.equals(lastname, that.lastname) &&
-                Objects.equals(peselId, that.peselId);
+        return Objects.equals(getFirstname(), that.getFirstname()) &&
+                Objects.equals(getLastname(), that.getLastname()) &&
+                Objects.equals(getPeselId(), that.getPeselId());
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(firstname, lastname, peselId);
+        return Objects.hash(peselId);
     }
 
     public String getFirstname() {
